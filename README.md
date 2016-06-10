@@ -4,11 +4,11 @@
 ### TOC
 
 * Webpack
-* CSS Modules
-* Babel / ES6
+  * CSS Modules
+  * Babel / ES6
 * React
 * Redux
-* Mobx
+  * Mobx
 * Enzyme
 
 
