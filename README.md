@@ -139,6 +139,7 @@ const { foo, bar } = this.props
 ```
 ### Spread Operator
 >The ... operator (or spread operator) is already supported for arrays in ES6. There is also an ECMAScript proposal for Object Rest and Spread Properties. We're taking advantage of these supported and developing standards in order to provide a cleaner syntax in JSX.
+
 ```
 var component = <Component foo={x} bar={y} />;
 
@@ -148,7 +149,7 @@ props.bar = y;
 var component = <Component {...props} />;
 ```
 
-Rest and Spread Properties ...
+**Rest and Spread Properties ...**
 ```
 var { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
 x; // 1
