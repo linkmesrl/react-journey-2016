@@ -125,6 +125,8 @@ handleClick = () => {
 };
 ```
 
+`<button onClick={() => handleClick()}>Click me</button>`
+
 ### Destructuring
 ```
 var foo = ["one", "two", "three"];
@@ -133,9 +135,19 @@ console.log(one); // "one"
 console.log(two); // "two"
 console.log(three); // "three"
 ```
+Destructuring Imports
+```
+import React, { Component, PropTypes } from 'react';
+```
 Destructuring Props
 ```
-const { foo, bar } = this.props
+<Component foo={x} bar={y} />
+
+const Component = (props) => (
+  const { foo, bar } = props;
+  ...
+);
+
 ```
 ### Spread Operator
 >The ... operator (or spread operator) is already supported for arrays in ES6. There is also an ECMAScript proposal for Object Rest and Spread Properties. We're taking advantage of these supported and developing standards in order to provide a cleaner syntax in JSX.
