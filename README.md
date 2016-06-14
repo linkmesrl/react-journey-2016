@@ -7,7 +7,7 @@
   * CSS Modules
   * ES2015 / Babel
 * [React](./REACT.md)
-* Redux
+* [Redux](./REDUX.md)
   * Mobx
 * Enzyme
 
@@ -120,6 +120,7 @@ export default MyComponent;
 ### Arrow function
 `() => console.log('Hi world!')`
 
+ES7 class properties
 ```
 handleClick = () => {
   console.log('hello world');
