@@ -63,7 +63,7 @@ function todoApp(state = {}, action) {
 
 ## React Redux
 Presentational and Container Components
-![Presentational and Container Components](./img/presentational-and-container-components-png)
+![Presentational and Container Components](./img/presentational-and-container-components.png)
 
 ### Container Components
 React component that uses `store.subscribe()` to read a part of the Redux state tree and supply props to a presentational component it renders.
