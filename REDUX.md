@@ -68,26 +68,28 @@ Presentational and Container Components
 ### Container Components
 React component that uses `store.subscribe()` to read a part of the Redux state tree and supply props to a presentational component it renders.
 
-**connect()**
+### connect()
 
-- mapStateToProps(): a function that tell how to transform the current Redux store state into the props you want to pass.
-  ```
-  const mapStateToProps = (state) => {
-    return {
-      todos: state.todos,
+**mapStateToProps()**  
+a function that tell how to transform the current Redux store state into the props you want to pass.
+```
+const mapStateToProps = (state) => {
+  return {
+    todos: state.todos,
+  }
+}
+```
+**mapDispatchToProps()**  
+a function that receives `dispatch()` method and returns a callback props.
+```
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onTodoClick: (id) => {
+      dispatch(toggleTodo(id))
     }
   }
-  ```
-- mapDispatchToProps(): a function that receives `dispatch()` method and returns a callback props.
-  ```
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      onTodoClick: (id) => {
-        dispatch(toggleTodo(id))
-      }
-    }
-  }
-  ```
+}
+```
 
 Container
 ```
