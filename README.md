@@ -6,7 +6,7 @@
 * Webpack
   * CSS Modules
   * ES2015 / Babel
-* React
+* [React](./REACT.md)
 * Redux
   * Mobx
 * Enzyme
@@ -168,3 +168,10 @@ x; // 1
 y; // 2
 z; // { a: 3, b: 4 }
 ```
+
+## Typescript
+>TypeScript can’t currently compile async/await to ES5. If you need that, you need Babel or something else.
+In other words, TypeScript supports async/await, but can't compile it to the ECMAScript version that all browsers understand.
+If you don't use that feature, then please feel free to remove BabelJS from your build process.
+
+https://www.triplet.fi/blog/i-was-wrong-about-typescript-here-is-why/
