@@ -87,7 +87,8 @@ The real trick: **Atomic CSS Modules**
 https://medium.com/yplan-eng/atomic-css-modules-cb44d5993b27#.to9dsgs6a
 
 ## ES2015 / babel
-###class
+https://babeljs.io/docs/learn-es2015/
+### class
 >Today, we're happy to release React v0.13!  
 The most notable new feature is support for ES6 classes, which allows developers to have more flexibility when writing components. Our eventual goal is for ES6 classes to replace React.createClass completely, but until we have a replacement for current mixin use cases and support for class property initializers in the language, we don't plan to deprecate React.createClass.
 
