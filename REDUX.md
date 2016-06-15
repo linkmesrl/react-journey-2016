@@ -1,5 +1,5 @@
 # Redux
-http://redux.js.org
+http://redux.js.org  
 Redux itself is very simple.
 App’s state is described as a plain object.
 ```
@@ -61,9 +61,36 @@ function todoApp(state = {}, action) {
 ```
 90% of the code is just plain JavaScript, with no use of Redux itself, its APIs, or any magic.
 
+## Redux Api
+Create store with redux method `createStore`, it accept two arguments, combined reducers
+and persisted state (optional).
+Use `combineReducers` to combine different reducers in one.
+```
+import { createStore, combineReducers } from 'redux';
+
+import todos from './todos';
+import counter from './counter';
+
+const reducer = combineReducers({
+  todos,
+  counter
+});
+const store = createStore(reducer, persistedState);
+```
+
 ## React Redux
 Presentational and Container Components
 ![Presentational and Container Components](./img/presentational-and-container-components.png)
+
+### Provider
+Then you will use `Provider` component in JSX with store as a prop:
+```
+  import { Provider } from 'react-redux';
+
+  <Provider store={store}>
+    <App />
+  </Provider>
+```
 
 ### Container Components
 React component that uses `store.subscribe()` to read a part of the Redux state tree and supply props to a presentational component it renders.
@@ -90,7 +117,14 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 ```
-
+Or better, replace arrow function with ES2015 concise [method definitions](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Functions/Method_definitions), available when a function is inside an object:
+```
+const mapDispatchToProps = (dispatch) => ({
+  onTodoClick(id) {
+    dispatch(toggleTodo(id))
+  },
+});
+```
 Container
 ```
 import { connect } from 'react-redux'
@@ -130,3 +164,12 @@ TodoList.propTypes = {
 
 export default TodoList
 ```
+
+## Middlewares
+
+
+## Redux glossary
+https://github.com/reactjs/redux/blob/master/docs/Glossary.md
+
+## Redux workshop React Europe 2016
+https://github.com/gaearon/workshop

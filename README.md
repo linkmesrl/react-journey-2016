@@ -1,7 +1,7 @@
 # A React Journey
 ## A tour of the latest trends in the React ecosystem
 
-### TOC
+### Table of Contents
 
 * Webpack
   * CSS Modules
