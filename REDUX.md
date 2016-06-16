@@ -78,6 +78,44 @@ const reducer = combineReducers({
 const store = createStore(reducer, persistedState);
 ```
 
+store has some methods, `subscribe`, `getState` and more important `dispatch`.
+
+In this example we save the state to local storage when the state update
+```
+store.subscribe(() => {
+  saveState({
+    todos: store.getState().todos
+  });
+});
+```
+We should use lodash `throttle` to prevent the store to be called too many times
+```
+store.subscribe(_.throttle(() => {
+  saveState({
+    todos: store.getState().todos
+  });
+}, 1000));
+```
+
+**store.dispatch**  
+Here a script to log all the actions:
+```JavaScript
+const addLoggingToDispatch = (store) => {
+  const rawDispatch = store.dispatch;
+  return (action) => {
+    console.group(action.type);
+    console.log('prev state', store.getState());
+    console.log('action', action);
+    const returnValue = rawDispatch(action);
+    console.log('next state', store.getState());
+    console.groupEnd(action.type);
+    return returnValue;
+  }
+}
+```
+And then override the default store.dispatch with this new method (not for production)
+`store.dispatch = addLoggingToDispatch(store);`
+
 ## React Redux
 Presentational and Container Components
 ![Presentational and Container Components](./img/presentational-and-container-components.png)
@@ -102,10 +140,12 @@ a function that tell how to transform the current Redux store state into the pro
 ```
 const mapStateToProps = (state) => {
   return {
-    todos: state.todos,
+    todos: state.todos
   }
 }
 ```
+mapStateToProps accepts a second parameter that is component props `const mapStateToProps = (state, ownProps)`
+
 **mapDispatchToProps()**  
 a function that receives `dispatch()` method and returns a callback props.
 ```
@@ -124,6 +164,13 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(toggleTodo(id))
   },
 });
+```
+Or even better if the argument are the same and in the same order, you can pass a configuration object instead a function to the connect method:
+```
+const VisibleTodoList = connect(
+  mapStateToProps,
+  { onTodoClick: toggleTodo } // mapDispatchToProps configuration object
+)(TodoList)
 ```
 Container
 ```

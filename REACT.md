@@ -39,6 +39,19 @@ export default MyComponent;
 ```
 ## React Router
 
+- Router
+  `<Router history={browserHistory}>`
+- Route
+  `<Route path="/(:filter)" component={App}` />
+  () means optional parameter
+- Link
+  `<Link to={filter} activeStyle={{ textDecoration: 'none' }}`>
+  activeStyle prop -> prop to style the active route in Link component
+
+React router > 3.x.x `withRouter`
+
+`withRouter(connect(Component))`: HoC that inject react router props into component (using with redux)
+
 ## Hoc
 ```
 import React, { Component } from "React";
