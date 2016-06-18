@@ -1,6 +1,12 @@
 # Redux
-http://redux.js.org  
-Redux itself is very simple.
+http://redux.js.org
+
+The three principles: [link](https://github.com/reactjs/redux/blob/master/docs/introduction/ThreePrinciples.md)
+- Single source of truth
+- State is read only
+- Changes are made with pure functions
+
+Redux itself is very simple.  
 App’s state is described as a plain object.
 ```
 {
