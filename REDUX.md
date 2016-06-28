@@ -219,7 +219,7 @@ export default TodoList
 ```
 
 ## Middlewares
-
+Before  
 ```JavaScript
 const promise = store => {
   const next = store.dispatch;
@@ -231,7 +231,7 @@ const promise = store => {
   }
 }
 ```
-
+After  
 ```JavaScript
 const promise = store => next => action => {
   if (typeof action.then === 'function') {
