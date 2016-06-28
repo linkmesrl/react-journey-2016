@@ -106,6 +106,7 @@ You can use it with every test library and assertion library. You can use it for
 Shallow rendering:  
 `const wrapper = shallow(<Foo />);`
 
+[shallow rendering api](https://github.com/airbnb/enzyme/blob/master/docs/api/shallow.md)
 ```
 it('renders the title', () => {
   const item = {
