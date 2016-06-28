@@ -220,6 +220,34 @@ export default TodoList
 
 ## Middlewares
 
+```JavaScript
+const promise = store => {
+  const next = store.dispatch;
+  return action => {
+    if (typeof action.then === 'function') {
+      return action.then(next);
+    }
+    return next(action);
+  }
+}
+```
+
+```JavaScript
+const promise = store => next => action => {
+  if (typeof action.then === 'function') {
+    return action.then(next);
+  }
+  return next(action);
+}
+```
+
+thunk middleware can emit several actions during async operation.
+```JavaScript
+const thunk = store => next => action =>
+  typeof action === 'function' ?
+    action(store.dispatch, store.getState) :
+    next(action);
+```
 
 ## Redux glossary
 https://github.com/reactjs/redux/blob/master/docs/Glossary.md

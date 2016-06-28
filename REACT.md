@@ -92,7 +92,7 @@ export const Enhance = ComposedComponent => {
 ```
 http://rea.tech/reactjs-real-world-examples-of-higher-order-components/
 
-## Enzyme (link)[http://airbnb.io/enzyme/]
+## Enzyme [link](http://airbnb.io/enzyme/)
 Before react testing the UI it's always been hard.
 Testing single components and not the entire UI is the key to simplify the process.
 
@@ -125,8 +125,7 @@ Enzyme Selectors can find nodes by 4 categories:
 - display name `wrapper.find('ComponentDisplayName')`
 - object properties `wrapper.find({ prop: text })`
 
-**Event simulations**
-
+**Event simulations**  
 Enzyme gives you a concise and elegant way of simulating user events, one of the trickier aspects of UI testing. Just pass the name of the event you want to simulate, along with any required data:
 
 ```
@@ -135,8 +134,12 @@ wrapper.simulate('click', {
 })
 ```
 
-Debug:  
-`console.log(wrapper.debug())` > nicely formatted JSX
+**Debug**  
+`console.log(wrapper.debug())`
+
+Returns an HTML-like string of the wrapper for debugging purposes. Useful to print out to the console when tests are not passing when you expect them to. A nicely formatted JSX
+
+https://github.com/airbnb/enzyme/blob/master/docs/api/ShallowWrapper/debug.md
 
 ## Workshop by nodeschool
 https://github.com/kohei-takata/learnyoureact
