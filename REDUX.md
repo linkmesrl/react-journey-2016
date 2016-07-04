@@ -252,5 +252,11 @@ const thunk = store => next => action =>
 ## Redux glossary
 https://github.com/reactjs/redux/blob/master/docs/Glossary.md
 
+## Redux video
+- [Dan abramov at react europe 2016](https://www.youtube.com/watch?v=uvAXVMwHJXU)
+- https://egghead.io/courses/getting-started-with-redux
+- https://egghead.io/courses/building-react-applications-with-idiomatic-redux
+
+
 ## Redux workshop React Europe 2016
 https://github.com/gaearon/workshop
