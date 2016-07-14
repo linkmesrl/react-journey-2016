@@ -9,7 +9,12 @@ Nice to have
 - Server side rendering
 
 ## JSX
-
+String refs are bad in quite a few ways:
+1. String refs are not composable. A wrapping component can’t “snoop” on a ref to a child if it already has an existing string ref. On the other hand, callback refs don’t have a single owner, so you can always compose them.
+2. String refs don’t work with static analysis like Flow. Flow can’t guess the magic that framework does to make the string ref “appear” on `this.refs`, as well as its type (which could be different). Callback refs are friendlier to static analysis.
+3. The owner for a string ref is determined by the currently executing component. This means that with a common “render callback” pattern (e.g. `<DataTable renderRow={this.renderRow} />`), the wrong component will own the ref (it will end up on `DataTable` instead of your component defining `renderRow`).
+4. String refs force React to keep track of currently executing component. This is problematic because it makes `react` module stateful, and thus causes weird errors when `react` module is duplicated in the bundle.
+This is why we want to move away from them in favor of callback refs that solve all those problems.
 
 ## ES2015 syntax
 ```
