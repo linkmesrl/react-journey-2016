@@ -9,7 +9,9 @@ Nice to have
 - Server side rendering
 
 ## JSX
-https://news.ycombinator.com/edit?id=12093234
+
+### ref
+https://news.ycombinator.com/edit?id=12093234  
 String refs are bad in quite a few ways:  
 1. String refs are not composable. A wrapping component can’t “snoop” on a ref to a child if it already has an existing string ref. On the other hand, callback refs don’t have a single owner, so you can always compose them.  
 2. String refs don’t work with static analysis like Flow. Flow can’t guess the magic that framework does to make the string ref “appear” on `this.refs`, as well as its type (which could be different). Callback refs are friendlier to static analysis.  
