@@ -6,7 +6,7 @@ The three principles: [link](https://github.com/reactjs/redux/blob/master/docs/i
 - State is read only
 - Changes are made with pure functions
 
-Redux itself is very simple.  
+Redux itself is very simple. [link to reddit discussion](https://www.reddit.com/r/reactjs/comments/4npzq5/confused_redux_or_mobx/)
 App’s state is described as a plain object.
 ```
 {
